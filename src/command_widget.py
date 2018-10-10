@@ -1,6 +1,5 @@
 #!/usr/bin/env python
-import sys
-# sys.path.append('../../arl_commons/src/arl_commons')
+
 from arl_commons.pyarlarm import ArlArm, ArlMusculature, ArlMuscleState, ArlMuscleCommand, ArlMuscleControlMode, ArlArmException
 import os
 from PyQt5.QtWidgets import *

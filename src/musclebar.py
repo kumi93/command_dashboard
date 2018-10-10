@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 
-
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QHBoxLayout, QVBoxLayout, QSlider, QLCDNumber, QMainWindow, QInputDialog
 from PyQt5.QtCore import Qt
-
 
 class MuscleBar:
     def __init__(self, name, window, MIN_PRESSURE=3500, MAX_PRESSURE=10000):

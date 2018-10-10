@@ -12,6 +12,13 @@ GUI application which publish desired pressures of Upper-Limb-Robot and 2DOF arm
 $ cd ~/catkin_ws/src
 $ git clone
 ```
+and of course, 
+```
+$ cd ~/catkin_ws
+$ catkin_make
+$ source ~/catkin_ws/devel/setup.bash
+```
+
 
 ## Usage
 ```
