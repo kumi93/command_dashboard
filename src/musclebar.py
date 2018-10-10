@@ -1,11 +1,9 @@
 #!/usr/bin/env python
 
-import sys
 
-from arl_commons.src.arl_commons.pyarlarm import ArlArm, ArlMusculature, ArlMuscleState, ArlMuscleCommand, ArlMuscleControlMode, ArlArmException
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QHBoxLayout, QVBoxLayout, QSlider, QLCDNumber, QMainWindow, QInputDialog
 from PyQt5.QtCore import Qt
-import numpy as np
+
 
 class MuscleBar:
     def __init__(self, name, window, MIN_PRESSURE=3500, MAX_PRESSURE=10000):
