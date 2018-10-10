@@ -53,6 +53,7 @@
   <build_depend>rospy</build_depend>
   <build_depend>std_msgs</build_depend>
   <build_depend>arl_hw_msgs</build_depend>
+  <build_depend>arl_commons</build_depend>
   <!--<build_export_depend>roscpp</build_export_depend>-->
   <!--<build_export_depend>rospy</build_export_depend>-->
   <!--<build_export_depend>std_msgs</build_export_depend>-->
@@ -61,6 +62,7 @@
   <run_depend>rospy</run_depend>
   <run_depend>std_msgs</run_depend>
   <run_depend>arl_hw_msgs</run_depend>
+  <run_depend>arl_commons</run_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

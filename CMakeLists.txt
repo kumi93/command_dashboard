@@ -14,6 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   arl_hw_msgs
   std_msgs
   std_srvs
+  arl_commons
 )
 
 ## System dependencies are found with CMake's conventions
