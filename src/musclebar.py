@@ -44,6 +44,13 @@ class MuscleBar:
         self.pressure_mpa = self.convert_to_mpa(self.pressure)
         self.lcd.display(self.pressure)
         self.lbl.setText('Muscle_' + self.name + ':  {:.4f} [MPa]'.format(self.pressure_mpa))
+    
+    def valuechanged(self, value):
+        self.pressure = value
+        self.pressure_mpa = self.convert_to_mpa(self.pressure)
+        self.lcd.display(self.pressure)
+        self.sld.setValue(self.pressure)
+        self.lbl.setText('Muscle_' + self.name + ':  {:.4f} [MPa]'.format(self.pressure_mpa))
 
     def editclicked(self):
         value, ok_pressed = QInputDialog.getInt(self.window,

@@ -222,7 +222,7 @@ class CommandWidget(QWidget):
     def saveclicked(self):
         send_pressures = []
         for mbar in self.mbars:
-            send_pressures.append(mbar.pressure)
+            send_pressures.append(self.convert_to_mpa(mbar.pressure))
 
         savefilename = QFileDialog.getSaveFileName(self, "Save as csv file", "", "csv Files (*.csv)")[0]
         if savefilename:
@@ -239,12 +239,13 @@ class CommandWidget(QWidget):
                 reader = csv.reader(fld)
                 load_pressures_str = next(reader)
 
-            load_pressures = [int(load_pressure) for load_pressure in load_pressures_str]
+            load_pressures = [self.convert_to_value(float(load_pressure)) for load_pressure in load_pressures_str]
 
             for i, mbar in enumerate(self.mbars):
-                mbar.pressure = load_pressures[i]
-                mbar.lcd.display(mbar.pressure)
-                mbar.sld.setValue(mbar.pressure)
+                mbar.valuechanged(load_pressures[i])
+                # mbar.pressure = load_pressures[i]
+                # mbar.lcd.display(mbar.pressure)
+                # mbar.sld.setValue(mbar.pressure)
                 
                 
     def helpclicked(self):
@@ -253,9 +254,15 @@ class CommandWidget(QWidget):
 
     def convert_to_mpa(self, value):
         if value < 3500 or value > 10000:
-            raise ValueError(value)
+            raise ValueError('Invalid pressure value')
         mpa = ((value * 10.0 / 32768.0) - 1.0) / 4.0
         return mpa
+
+    def convert_to_value(self, mpa):
+        value = (4.0 * mpa + 1.0) * 32768.0 / 10.0
+        if value < 3500 or value > 10000:
+            raise ValueError('Invalid pressure value')
+        return value
         
 
 class HelpWindow(QWidget):
