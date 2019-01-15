@@ -4,13 +4,13 @@ command_dashboard
 GUI application which publish desired pressures of Upper-Limb-Robot and 2DOF arm 
 
 ## Requirement
-- arl_hw_msgs (https://github.com/arne48/arl_commons)
-- arl_commons (https://github.com/arne48/arl_hw_msgs)
+- arl_hw_msgs (https://github.com/arne48/arl_hw_msgs)
+- arl_commons (https://github.com/arne48/arl_commons)
 
 ## Installation
 ```
 $ cd ~/catkin_ws/src
-$ git clone
+$ git clone https://github.com/kumi93/command_dashboard.git
 ```
 and of course, 
 ```
