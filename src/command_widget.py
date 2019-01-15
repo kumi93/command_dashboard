@@ -8,6 +8,7 @@ from PyQt5.QtGui import *
 import PyQt5.QtCore
 import musclebar as mb
 import csv
+import rospy
 
 
 
@@ -21,6 +22,7 @@ class CommandWidget(QWidget):
         super(CommandWidget, self).__init__(parent)
 
         self.parent = parent
+        self.arm = ArlArm()
         
         try:
             self.ros_master_uri = os.environ['ROS_MASTER_URI']
@@ -38,11 +40,10 @@ class CommandWidget(QWidget):
                 self.num_columns = 4
                 raise ValueError
         except ValueError:
-            print '[WARNING] ROS_MASTER_URI is unknown. Please confirm $ROS_MASTER_URI'
+            rospy.logwarn('ROS_MASTER_URI is unknown. Please confirm $ROS_MASTER_URI')
         except KeyError:
-            print '[ERROR] ROS_MASTER_URI not found. Please confirm $ROS_MASTER_URI'
+            rospy.logerr('ROS_MASTER_URI not found. Please confirm $ROS_MASTER_URI')
 
-        self.arm = ArlArm()
         self.commands = ArlMusculature()
         self.init_widget_ui()
         
