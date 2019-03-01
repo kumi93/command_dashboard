@@ -3,7 +3,10 @@ command_dashboard
 
 GUI application which publish desired pressures of Upper-Limb-Robot and 2DOF arm 
 
-## Requirement
+<img src="https://raw.github.com/wiki/kumi93/command_dashboard/images/Command_dashboard.png" width="650">
+
+
+## Requirements
 - arl_hw_msgs (https://github.com/arne48/arl_hw_msgs)
 - arl_commons (https://github.com/arne48/arl_commons)
 
